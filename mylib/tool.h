@@ -5,21 +5,24 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
+#include <ctime>
 
 using namespace std;
 
-//产生随机数据
+//产生随机数据,数据值域为[a,b]，默认为[0,10]。
 template <typename T>
-void GenerateData(vector<T> & data, const int N)
+void GenerateData(vector<T> & data, const int N, const int a = 0, const int b = 10)
 {
     if (N <= 0)
     {
         return;
     }
     srand(time(0));
+    int define = b-a+1;
     for (int i = 0; i < N; i++)
     {
-        int t = rand()%N+1;
+        int t = rand()%define;
+        t += a;
         data.push_back(t);
     }
 }
