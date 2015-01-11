@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1420891898 source:c:\users\administrator\code\datastructbyc\chapter2\exec2_6\main.cpp
+	<iostream>
+	"../../mylib/myclock.h"
+
+1218863910 c:\users\administrator\code\datastructbyc\mylib\myclock.h
+	<ctime>
+
