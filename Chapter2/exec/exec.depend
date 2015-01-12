@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1421072339 source:c:\users\administrator\code\datastructbyc\chapter2\exec\main.cpp
+	<iostream>
+	<vector>
+	<iterator>
+	<map>
+	"../../mylib/tool.h"
+
+1420808811 c:\users\administrator\code\datastructbyc\mylib\tool.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<vector>
+	<ctime>
+
