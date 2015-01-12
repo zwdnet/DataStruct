@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1421057796 source:c:\users\administrator\code\datastructbyc\chapter3\list\main.cpp
+	<iostream>
+	"list.h"
+	"doublelist.h"
+
+1421050768 c:\users\administrator\code\datastructbyc\chapter3\list\list.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+
+1420982206 source:c:\users\administrator\code\datastructbyc\chapter3\list\list.cpp
+	"list.h"
+	<iostream>
+	<cstdio>
+	<cstdlib>
+
+1420982206 c:\users\administrator\code\datastructbyc\chapter3\list\list.cpp
+	"list.h"
+	<iostream>
+	<cstdio>
+	<cstdlib>
+
+1421057893 c:\users\administrator\code\datastructbyc\chapter3\list\doublelist.h
+	<iostream>
+
