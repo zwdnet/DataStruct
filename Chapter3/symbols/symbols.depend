@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1421332637 source:c:\users\administrator\code\datastructbyc\chapter3\symbols\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<stack>
+
