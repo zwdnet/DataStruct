@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <vector>
 #include <ctime>
+#include <string>
 
 using namespace std;
 
@@ -37,5 +38,11 @@ void DisplayData(const vector<T> & data)
         cout<<data[i]<<" ";
     }
     cout<<endl;
+}
+
+//Êä³ö´íÎóÐÅÏ¢
+void Error(string s)
+{
+    cout<<s;
 }
 #endif

@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1421418985 source:c:\users\administrator\code\datastructbyc\chapter3\queue\main.cpp
+	<iostream>
+	"queue.h"
+
+1421419059 c:\users\administrator\code\datastructbyc\chapter3\queue\queue.h
+	<iostream>
+	<vector>
+	"../../mylib/tool.h"
+
+1421418377 c:\users\administrator\code\datastructbyc\mylib\tool.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<vector>
+	<ctime>
+	<string>
+
