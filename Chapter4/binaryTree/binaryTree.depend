@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1421505808 source:c:\users\administrator\code\datastructbyc\chapter4\binarytree\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"BinTree.h"
+
+1421505778 c:\users\administrator\code\datastructbyc\chapter4\binarytree\bintree.h
+	<iostream>
+	<vector>
+
