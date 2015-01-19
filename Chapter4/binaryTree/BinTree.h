@@ -12,6 +12,7 @@ struct TreeNode
     T Element;
     TreeNode<T> * Left;
     TreeNode<T> * Right;
+    int Height;
 };
 
 template <typename T>
@@ -21,7 +22,7 @@ class SearchTree
         TreeNode<T> * tree;
         int size;
 
-    private:
+    protected:
         void makeEmpty(TreeNode<T> * Tree);
         void printTreeInOrder(TreeNode<T> * Tree);
         void printTreePreOrder(TreeNode<T> * Tree);

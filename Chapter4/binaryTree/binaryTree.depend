@@ -1,11 +1,16 @@
 # depslib dependency file v1.0
-1421586150 source:c:\users\administrator\code\datastructbyc\chapter4\binarytree\main.cpp
+1421677454 source:c:\users\administrator\code\datastructbyc\chapter4\binarytree\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"BinTree.h"
+	"AVL.h"
 
-1421586637 c:\users\administrator\code\datastructbyc\chapter4\binarytree\bintree.h
+1421678953 c:\users\administrator\code\datastructbyc\chapter4\binarytree\bintree.h
 	<iostream>
 	<vector>
+
+1421678936 c:\users\administrator\code\datastructbyc\chapter4\binarytree\avl.h
+	<iostream>
+	"BinTree.h"
 

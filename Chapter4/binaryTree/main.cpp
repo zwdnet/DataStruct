@@ -2,12 +2,14 @@
 #include <cstdlib>
 #include <ctime>
 #include "BinTree.h"
+#include "AVL.h"
 
 using namespace std;
 
 int main()
 {
-    SearchTree<int> testTree;
+    //SearchTree<int> testTree;
+    AVLTree<int> testTree;
     srand(time(0));
     int N;
     cout<<"输入数据规模:";
