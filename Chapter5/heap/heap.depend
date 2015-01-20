@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1421763670 source:c:\users\administrator\code\datastructbyc\chapter5\heap\main.cpp
+	<iostream>
+	"heap.h"
+
+1421764637 c:\users\administrator\code\datastructbyc\chapter5\heap\heap.h
+	<iostream>
+
