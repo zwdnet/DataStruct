@@ -18,6 +18,7 @@ void GenerateData(vector<T> & data, const int N, const int a = 0, const int b = 
     {
         return;
     }
+    data.clear(); //防止用户事先声明了数组的长度，下面push_back会增加长度，导致最后得到的长度为2N
     srand(time(0));
     int define = b-a+1;
     for (int i = 0; i < N; i++)
@@ -44,5 +45,17 @@ void DisplayData(const vector<T> & data)
 void Error(string s)
 {
     cout<<s;
+}
+
+//复制数据
+template <typename T>
+void CopyData(const vector<T> & Origin, vector<T> & Dest)
+{
+    int N = Origin.size();
+    Dest.resize(N);
+    for (int i = 0; i < N; i++)
+    {
+        Dest[i] = Origin[i];
+    }
 }
 #endif

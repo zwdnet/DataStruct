@@ -1,8 +1,20 @@
 # depslib dependency file v1.0
-1421763670 source:c:\users\administrator\code\datastructbyc\chapter5\heap\main.cpp
+1421845739 source:c:\users\administrator\code\datastructbyc\chapter5\heap\main.cpp
 	<iostream>
+	<cstdlib>
+	<ctime>
+	<vector>
 	"heap.h"
+	"../../mylib/tool.h"
 
-1421764637 c:\users\administrator\code\datastructbyc\chapter5\heap\heap.h
+1421846011 c:\users\administrator\code\datastructbyc\chapter5\heap\heap.h
 	<iostream>
+
+1421418377 c:\users\administrator\code\datastructbyc\mylib\tool.h
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<vector>
+	<ctime>
+	<string>
 

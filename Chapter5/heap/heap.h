@@ -16,20 +16,22 @@ template <typename T>
 class Heap
 {
     private:
-        HeapStruct<T> * HeapNode;
+        HeapStruct<T> * HeapHead;
 
     private:
         HeapStruct<T> * initialize(const int MaxElements);
 
     public:
-        void Initialize(const int MaxElements){initialize(MaxElements);}
+        Heap(const int MaxElements){Initialize(MaxElements);}
+        void Initialize(const int MaxElements){HeapHead = initialize(MaxElements);}
         void Destroy(void);
         void MakeEmpty(void);
         void Insert(const T x);
         T DeleteMin(void);
-        T FindMin(void);
-        bool IsEmpty(void);
-        bool IsFull(void);
+        T FindMin(void){return HeapHead->Elements[1];};
+        bool IsEmpty(void){return HeapHead->Size == 0;}
+        bool IsFull(void){return HeapHead->Size == HeapHead->Capacity;}
+        void BuildHeap(vector<T> x);
 };
 
 template <typename T>
@@ -62,5 +64,67 @@ HeapStruct<T> * Heap<T>::initialize(const int MaxElements)
     return H;
 }
 
+template <typename T>
+void Heap<T>::Insert(T x)
+{
+    int i = 0;
 
+    if (IsFull())
+    {
+        cout<<"¶ÑÒÑÂú"<<endl;
+        return;
+    }
+
+    for (i = ++HeapHead->Size; HeapHead->Elements[i/2] > x; i /= 2)
+    {
+        HeapHead->Elements[i] = HeapHead->Elements[i/2];
+    }
+    HeapHead->Elements[i] = x;
+}
+
+template <typename T>
+T Heap<T>::DeleteMin(void)
+{
+    int i, Child;
+    T MinElement, LastElement;
+
+    if (IsEmpty())
+    {
+        cout<<"¶ÑÎª¿Õ"<<endl;
+        return HeapHead->Elements[0];
+    }
+
+    MinElement = HeapHead->Elements[1];
+    LastElement = HeapHead->Elements[HeapHead->Size--];
+
+    for (i = 1; i*2 <= HeapHead->Size; i = Child)
+    {
+        Child = i*2;
+        if (Child != HeapHead->Size && HeapHead->Elements[Child + 1]
+                                       < HeapHead->Elements[Child])
+        {
+            Child++;
+        }
+        if (LastElement > HeapHead->Elements[Child])
+        {
+            HeapHead->Elements[i] = HeapHead->Elements[Child];
+        }
+        else
+        {
+            break;
+        }
+    }
+    HeapHead->Elements[i] = LastElement;
+    return MinElement;
+}
+
+template <typename T>
+void Heap<T>::BuildHeap(vector<T> x)
+{
+    int N = x.size();
+    for (int i = 0; i < N; i++)
+    {
+        Insert(x[i]);
+    }
+}
 #endif // HEAP_H_INCLUDED
