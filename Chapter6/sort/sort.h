@@ -103,5 +103,67 @@ void HeapSort(vector<T> & data)
     }
 }
 
+//归并排序
+//合并过程
+template <typename T>
+void Merge(vector<T> & data, vector<T> & TmpArray, int Lpos,
+            int Rpos, int RightEnd)
+{
+    int i, LeftEnd, NumElements, TmpPos;
+
+    LeftEnd = Rpos - 1;
+    TmpPos = Lpos;
+    NumElements = RightEnd - Lpos + 1;
+
+    while (Lpos <= LeftEnd && Rpos <= RightEnd)
+    {
+        if (data[Lpos] <= data[Rpos])
+        {
+            TmpArray[TmpPos++] = data[Lpos++];
+        }
+        else
+        {
+            TmpArray[TmpPos++] = data[Rpos++];
+        }
+    }
+
+    while (Lpos <= LeftEnd)
+    {
+        TmpArray[TmpPos++] = data[Lpos++];
+    }
+    while (Rpos <= RightEnd)
+    {
+        TmpArray[TmpPos++] = data[Rpos++];
+    }
+
+    for (i = 0; i < NumElements; i++, RightEnd--)
+    {
+        data[RightEnd] = TmpArray[RightEnd];
+    }
+}
+
+//实际排序过程
+template <typename T>
+void MSort(vector<T> & data, vector<T> & TmpArray, const int & Left,
+           const int & Right)
+{
+    int Center;
+
+    if (Left < Right)
+    {
+        Center = (Left + Right)/2;
+        MSort(data, TmpArray, Left, Center);
+        MSort(data, TmpArray, Center+1, Right);
+        Merge(data, TmpArray, Left, Center+1, Right);
+    }
+}
+
+template <typename T>
+void MergeSort(vector<T> & data)
+{
+    vector<T> TmpArray;
+    TmpArray.resize(data.size());
+    MSort(data, TmpArray, 0, data.size()-1);
+}
 
 #endif // SORT_H_INCLUDED

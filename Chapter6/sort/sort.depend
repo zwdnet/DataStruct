@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1422191931 source:c:\users\administrator\code\datastructbyc\chapter6\sort\main.cpp
+1422276291 source:c:\users\administrator\code\datastructbyc\chapter6\sort\main.cpp
 	<iostream>
 	"../../mylib/tool.h"
 	"../../mylib/myclock.h"
@@ -16,7 +16,7 @@
 1218863910 c:\users\administrator\code\datastructbyc\mylib\myclock.h
 	<ctime>
 
-1422192323 c:\users\administrator\code\datastructbyc\chapter6\sort\sort.h
+1422276993 c:\users\administrator\code\datastructbyc\chapter6\sort\sort.h
 	<iostream>
 	<vector>
 

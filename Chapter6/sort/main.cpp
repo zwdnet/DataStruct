@@ -45,5 +45,14 @@ int main()
     mytim.end();
     cout<<"ºÄÊ±:"<<mytim.GetHowLong()<<endl;
 
+    CopyData(data, temp);
+    cout<<"¹é²¢ÅÅĞò:"<<endl;
+    mytim.begin();
+    MergeSort(temp);
+    #ifdef TEST
+    DisplayData(temp);
+    #endif
+    mytim.end();
+    cout<<"ºÄÊ±:"<<mytim.GetHowLong()<<endl;
     return 0;
 }
