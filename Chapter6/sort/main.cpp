@@ -2,6 +2,7 @@
 #include "../../mylib/tool.h"
 #include "../../mylib/myclock.h"
 #include "sort.h"
+#include <algorithm>
 
 using namespace std;
 
@@ -54,5 +55,26 @@ int main()
     #endif
     mytim.end();
     cout<<"耗时:"<<mytim.GetHowLong()<<endl;
+
+    CopyData(data, temp);
+    cout<<"快速排序:"<<endl;
+    mytim.begin();
+    QuickSort(temp);
+    #ifdef TEST
+    DisplayData(temp);
+    #endif
+    mytim.end();
+    cout<<"耗时:"<<mytim.GetHowLong()<<endl;
+
+    CopyData(data, temp);
+    cout<<"STL自带的排序:"<<endl;
+    mytim.begin();
+    sort(temp.begin(), temp.end());
+    #ifdef TEST
+    DisplayData(temp);
+    #endif
+    mytim.end();
+    cout<<"耗时:"<<mytim.GetHowLong()<<endl;
+
     return 0;
 }

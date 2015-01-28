@@ -166,4 +166,90 @@ void MergeSort(vector<T> & data)
     MSort(data, TmpArray, 0, data.size()-1);
 }
 
+//快速排序
+template <typename T>
+T Median3(vector<T> & data, int Left, int Right)
+{
+    int Center = (Left + Right) / 3;
+
+    if (data[Left] > data[Center])
+    {
+        swap(data[Left], data[Center]);
+    }
+    if (data[Left] > data[Right])
+    {
+        swap(data[Left], data[Right]);
+    }
+    if (data[Center] > data[Right])
+    {
+        swap(data[Center], data[Right]);
+    }
+
+    swap(data[Center], data[Right-1]);
+    return data[Right-1];
+}
+
+//专门给快排用的插入排序
+template <typename T>
+void InsertSort(vector<T> & data, int Left ,int Right)
+{
+    int N = Right-Left+1;
+
+    int j, p;
+
+    T temp;
+    for (p = Left; p < N; p++)
+    {
+        temp = data[p];
+        for (j = p; j > 0 && data[j-1] > temp; j--)
+        {
+            data[j] = data[j-1];
+        }
+        data[j] = temp;
+    }
+}
+
+const int Cutoff = 3;
+
+template <typename T>
+void Qsort(vector<T> & data, int Left, int Right)
+{
+    int i, j;
+    T Pivot;
+
+    if (Left + Cutoff <= Right)
+    {
+        Pivot = Median3(data, Left, Right);
+        i = Left, j = Right-1;
+        for (;;)
+        {
+            while (data[++i] < Pivot){}
+            while (data[--j] > Pivot){}
+            if (i < j)
+            {
+                swap(data[i], data[j]);
+            }
+            else
+            {
+                break;
+            }
+        }
+        swap(data[i], data[Right-1]);
+
+        Qsort(data, Left, i-1);
+        Qsort(data, i+1, Right);
+    }
+    else
+    {
+        InsertSort(data, Left, Right-Left+1);
+    }
+}
+
+template <typename T>
+void QuickSort(vector<T> & data)
+{
+    int N = data.size();
+    Qsort(data, 0, N-1);
+}
+
 #endif // SORT_H_INCLUDED
